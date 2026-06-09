@@ -1,3 +1,17 @@
+// Keep-Alive Web Server for Render Free Tier
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+    res.send('Bot is running online 24/7!');
+});
+
+app.listen(port, () => {
+    console.log(`Web server ping receiver listening on port ${port}`);
+});
+
+// --- Your Original Bot Code Starts Below ---
 const mineflayer = require('mineflayer');
 
 const config = {
@@ -98,3 +112,4 @@ async function findAndSleepInBed() {
 }
 
 createBot();
+
